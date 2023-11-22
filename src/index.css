@@ -1,0 +1,17 @@
+:root {
+  --bg-color: #242424;
+  --dark-color: #333;
+  --primary-color: #812299;
+  --secoundary-color: #eb4b4b;
+  --text-primary-color: #ddd;
+  --text-secoundary-color: #222;
+
+  --space-s: 1rem;
+  --space-m: 2rem;
+
+  --text-n: 1.5rem;
+  --text-m: 2rem;
+  --text-l: 3rem;
+  --text-xl: 6rem;
+
+}

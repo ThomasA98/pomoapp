@@ -1,0 +1,46 @@
+.timer__contaier {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: var(--space-m);
+    box-sizing: border-box;
+}
+
+.timer__view {
+    font-size: var(--text-xl);
+    color: var(--primary-color);
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: .5rem;
+}
+
+.timer__container-actions {
+    display: flex;
+    gap: var(--space-m);
+}
+
+.timer__button {
+    border: none;
+    padding: .5rem 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: var(--text-s);
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: var(--text-primary-color);
+    cursor: pointer;
+}
+
+.timer__button:hover {
+    transform: scale(1.2);
+    transition: .5s;
+}
+
+.timer__button--primary {
+    background-color: var(--primary-color);
+}
+
+.timer__button--secoundary {
+    background-color: var(--secoundary-color);
+}
