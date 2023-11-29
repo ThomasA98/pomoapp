@@ -1,5 +1,0 @@
-export const POMO_CONFIG_TIMES_LOCALSTORAGE = 'pomoConfigTimes'
-export const DEFAULT_TIME_LONG_BREAK = 25
-export const DEFAULT_TIME_FOCUS = 25
-export const DEFAULT_TIME_BREAK = 5
-export const DEFAULT_BREAKS_AFTER_LONG_BREAK = 3

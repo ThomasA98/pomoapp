@@ -1,14 +1,13 @@
-import React from 'react'
 import { TimeCounter } from '../components/TimeCounter'
+import { viewTransitionStateless } from '../lib_viewTransition/useViewTransition'
+import { ShareTransitions } from '../transitions/transitions'
 
-interface PomoViewProps {
-  isVisible: boolean
-}
+const PomoView = () => {
 
-const PomoView: React.FC<PomoViewProps> = ({ isVisible }) => {
+  const { register } = viewTransitionStateless<ShareTransitions>([])
 
   return (
-    <section className='view' hidden={ !isVisible }>
+    <section style={{ viewTransitionName: register(ShareTransitions.containerTransition) }} className='view'>
         <TimeCounter />
     </section>
   )

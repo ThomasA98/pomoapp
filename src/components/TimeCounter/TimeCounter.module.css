@@ -17,30 +17,26 @@
 
 .timer__container-actions {
     display: flex;
-    gap: var(--space-m);
+    gap: var(--space-sx);
 }
 
 .timer__button {
     border: none;
-    padding: .5rem 1rem;
+    flex: 1;
     text-align: center;
     text-transform: uppercase;
+    padding: var(--space-sx);
     font-size: var(--text-s);
     border-radius: 10px;
     box-sizing: border-box;
     color: var(--text-primary-color);
+    background-color: #0000;
     cursor: pointer;
+    border: 1px solid var(--dark-color);
+    box-shadow: 0 0 .5rem var(--dark-color);
 }
 
 .timer__button:hover {
-    transform: scale(1.2);
+    background-color: var(--dark-color);
     transition: .5s;
-}
-
-.timer__button--primary {
-    background-color: var(--primary-color);
-}
-
-.timer__button--secoundary {
-    background-color: var(--secoundary-color);
 }

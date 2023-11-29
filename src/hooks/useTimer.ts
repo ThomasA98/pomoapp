@@ -1,13 +1,13 @@
-import { useState } from 'react'
-import { secondToMiliseconds } from '../utils'
+import { useMemo, useState } from 'react'
+import { secondToMilliseconds } from '../utils'
 
 export interface UseTimerProps {
     initialTime: number
 }
 
-export const useTimer = ({ initialTime }: UseTimerProps) => {
+export const useTimer = () => {
 
-    const [ counter, setCounter ] = useState<number>(initialTime)
+    const [ counter, setCounter ] = useState<number>(0)
     const [ intervalId, setIntervalId ] = useState<number | null>(null)
     const [ isStarted, setIsStarted ] = useState<boolean>(false)
 
@@ -19,7 +19,7 @@ export const useTimer = ({ initialTime }: UseTimerProps) => {
                 clearInterval(interval)
                 return 0
             })
-        }, secondToMiliseconds(1))
+        }, secondToMilliseconds(1))
         setIntervalId(interval)
         setIsStarted(true)
     }
@@ -31,11 +31,18 @@ export const useTimer = ({ initialTime }: UseTimerProps) => {
         setIsStarted(false)
     }
 
+    const setTime = useMemo(
+        () => (time: number) => setCounter(time),
+        []
+    )
+
     return {
         counter,
+        isStarted,
 
         start,
         pause,
+        setTime,
     }
 
 }

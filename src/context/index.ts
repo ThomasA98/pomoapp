@@ -1,4 +1,4 @@
 export * from './aiContext';
 export * from './mkContext';
-export * from './pomoConfigContext';
+export * from './pomoContext';
 export * from './viewContext';

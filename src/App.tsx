@@ -1,12 +1,14 @@
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
 import { useContext } from 'react'
 
+import { viewTransitionStateless } from './lib_viewTransition/useViewTransition'
+import { ViewTransition } from './lib_viewTransition/ViewTransition'
+
+import { AiProvider, MkProvider, PomoProvider, TypeView, ViewContext } from './context'
 import PomoView from './views/PomoView'
 
-import { AiProvider, MkProvider, PomoConfigProvider, ViewContext } from './context'
+import { ShareTransitions } from './transitions/transitions'
+import { TransitionButton, Header } from './components'
 
-import tomato from './assets/tomato.svg'
 import pomoIcon from './assets/pomo_icon.svg'
 import iaIcon from './assets/ia_icon.svg'
 import mkIcon from './assets/mk_icon.svg'
@@ -17,50 +19,52 @@ function App() {
 
   const view = useContext(ViewContext)
 
+  const {
+    register,
+    viewTransitionHandler,
+  } = viewTransitionStateless<ShareTransitions>()
+
+  const transition = (viewSelected: TypeView, event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    viewTransitionHandler(event, () => {
+      view.changeView(viewSelected)
+    })
+  }
+
   return (
     <div className='grid-layout'>
-      <header className='header header__container'>
-        <div>
-          <img className='header__icon' src={tomato} alt='icon_tomato' />
-        </div>
-        <h1 className='header__title'>Pomoapp</h1>
-      </header>
+      <Header />
 
       <main className='main'>
         <AiProvider>
           <div className='accordion'>
-            {
-              view.currentView === 'iaView'
-                ? <div className='view'>IA</div>
-                : <button className='toggle_button' onClick={() => view.changeView('iaView')}>
-                  <img className='toggle_button__icon' src={iaIcon} alt='ia_icon' />
-                </button>
-            }
+            <ViewTransition
+              change={ view.currentView === 'iaView' }
+              initial={ <TransitionButton onClick={ event => transition('iaView', event) } src={ iaIcon } /> }
+              final={ <div style={{ viewTransitionName: register(ShareTransitions.containerTransition) }} className='view'>IA</div> }
+            />
           </div>
           <MkProvider>
             <div className='accordion'>
-              {
-                view.currentView === 'mkView'
-                  ? <div className='view'>MK</div>
-                  : <button className='toggle_button' onClick={() => view.changeView('mkView')}>
-                    <img className='toggle_button__icon' src={mkIcon} alt='mk_icon' />
-                  </button>
-              }
+              <ViewTransition
+                change={ view.currentView === 'mkView' }
+                initial={ <TransitionButton onClick={ event => transition('mkView', event) } src={ mkIcon } /> }
+                final={
+                  <section style={{ viewTransitionName: register(ShareTransitions.containerTransition) }} className='view'>MK</section>
+                }
+              />
             </div>
           </MkProvider>
         </AiProvider>
 
-        <PomoConfigProvider>
+        <PomoProvider>
           <div className='accordion' >
-            {
-              (view.currentView !== 'pomoView')
-              && <button className='toggle_button' onClick={() => view.changeView('pomoView')}>
-                  <img className='toggle_button__icon' src={pomoIcon} alt='pomo_icon' />
-                </button>
-            }
-            <PomoView isVisible={ view.currentView === 'pomoView' } />
+            <ViewTransition
+              change={ view.currentView === 'pomoView' }
+              initial={ <TransitionButton onClick={ event => transition('pomoView', event) } src={ pomoIcon } /> }
+              final={ <PomoView /> }
+            />
           </div>
-        </PomoConfigProvider>
+        </PomoProvider>
       </main>
 
       <footer className='footer'>footer</footer>
