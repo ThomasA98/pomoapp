@@ -1,28 +1,20 @@
-.timer__contaier {
+.mksettings {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: var(--text-primary-color);
+}
+
+.mksettings__setting_container {
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
-    gap: var(--space-m);
-    box-sizing: border-box;
+    justify-content: space-between;
+    font-size: var(--text-sx);
 }
 
-.timer__view {
-    font-size: var(--text-xl);
-    color: var(--primary-color);
-    font-weight: bold;
-    text-align: center;
-    letter-spacing: .5rem;
-}
-
-.timer__container-actions {
-    display: flex;
-    gap: var(--space-sx);
-}
-
-.timer__button {
+.mksettings__button {
     border: none;
-    flex: 1;
+    width: 7rem;
     text-align: center;
     text-transform: uppercase;
     padding: var(--space-sx);
@@ -36,7 +28,12 @@
     box-shadow: 0 0 .5rem var(--dark-color);
 }
 
-.timer__button:hover {
+.mksettings__button:hover {
     background-color: var(--dark-color);
     transition: .5s;
+}
+
+.mksettings__span {
+    margin-right: var(--space-sx);
+    color: var(--secoundary-color);
 }

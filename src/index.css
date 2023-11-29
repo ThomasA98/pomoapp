@@ -1,3 +1,7 @@
+* {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 :root {
   --bg-color: #242424;
   --dark-color: #333;
@@ -10,9 +14,10 @@
   --space-s: 1rem;
   --space-m: 2rem;
 
-  --text-n: 1.5rem;
-  --text-m: 2rem;
-  --text-l: 3rem;
-  --text-xl: 6rem;
+  --text-sx: 1rem;
+  --text-s: 1.3rem;
+  --text-m: 1.8rem;
+  --text-l: 2.5rem;
+  --text-xl: 4rem;
 
 }
