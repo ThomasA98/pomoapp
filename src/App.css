@@ -10,7 +10,7 @@ body {
     'main'
     'footer';
     grid-template-rows: 15vh 1fr 5vh;
-    height: 100vh;
+    height: 100dvh;
     box-sizing: border-box;
 }
 
@@ -34,16 +34,7 @@ body {
     width: calc(100vw - 5rem);
     height: 100%;
     box-sizing: border-box;
-    /* opacity: 1;
-    animation-name: fade;
-    animation-duration: 1s; */
 }
-
-/* @keyframes fade { */
-    /* from { */
-        /* opacity: 0; */
-    /* } */
-/* } */
 
 .footer {
     grid-area: footer;

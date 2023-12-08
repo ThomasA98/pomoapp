@@ -13,14 +13,14 @@ const initialState: MkState = {
 
 export const MkProvider: React.FC<MkProviderProps> = ({ children }) => {
 
-    const [ state, dispacher ] = useReducer(mkReducer, initialState)
+    const [ state, dispatcher ] = useReducer(mkReducer, initialState)
 
     useEffect(
         () => {
             const mkFromLocalstorage = localStorage.getItem(MK_LOCALSTORAGE) ?? ''
 
-            dispacher({
-                type: '[mk] undate text from localstorage',
+            dispatcher({
+                type: '[mk] update text from localstorage',
                 payload: {
                     text: mkFromLocalstorage
                 }
@@ -34,8 +34,8 @@ export const MkProvider: React.FC<MkProviderProps> = ({ children }) => {
     }
 
     const updateText = (text: string) => {
-        dispacher({
-            type: '[mk] undate text',
+        dispatcher({
+            type: '[mk] update text',
             payload: {
                 text
             }
@@ -43,7 +43,7 @@ export const MkProvider: React.FC<MkProviderProps> = ({ children }) => {
     }
 
     const reset = () => {
-        dispacher({
+        dispatcher({
             type: '[mk] reset',
         })
     }

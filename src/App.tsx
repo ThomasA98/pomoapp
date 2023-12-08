@@ -5,6 +5,7 @@ import { ViewTransition } from './lib_viewTransition/ViewTransition'
 
 import { TypeView, ViewContext } from './context'
 import PomoView from './views/PomoView'
+import MkView from './views/MkView'
 
 import { ShareTransitions } from './transitions/transitions'
 import { TransitionButton, Header } from './components'
@@ -14,14 +15,13 @@ import iaIcon from './assets/ia_icon.svg'
 import mkIcon from './assets/mk_icon.svg'
 
 import './App.css'
-import MkView from './views/MkView'
+import AiView from './views/AiView'
 
 function App() {
 
   const view = useContext(ViewContext)
 
   const {
-    register,
     viewTransitionHandler,
   } = viewTransitionStateless<ShareTransitions>()
 
@@ -40,7 +40,7 @@ function App() {
           <ViewTransition
             change={view.currentView === 'iaView'}
             initial={<TransitionButton onClick={event => transition('iaView', event)} src={iaIcon} />}
-            final={<div style={{ viewTransitionName: register(ShareTransitions.containerTransition) }} className='view'>IA</div>}
+            final={ <AiView /> }
           />
         </div>
 
@@ -48,7 +48,7 @@ function App() {
           <ViewTransition
             change={view.currentView === 'mkView'}
             initial={<TransitionButton onClick={event => transition('mkView', event)} src={mkIcon} />}
-            final={ <MkView /> }
+            final={<MkView />}
           />
         </div>
 

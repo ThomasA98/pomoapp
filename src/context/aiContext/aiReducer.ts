@@ -32,6 +32,9 @@ export type AiAction
         type: '[ai] change user input',
         payload: { userInput: string }
     }
+    | {
+        type: '[ai] clear response'
+    }
 
 export const AiReducer = (state: AiState, action: AiAction): AiState => {
 
@@ -67,6 +70,11 @@ export const AiReducer = (state: AiState, action: AiAction): AiState => {
             return {
                 ...state,
                 ...action.payload
+            }
+        case '[ai] clear response':
+            return {
+                ...state,
+                textAi: ''
             }
         default: return state
     }

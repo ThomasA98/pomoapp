@@ -13,7 +13,7 @@ export const TimeCounter = () => {
             <div className={ styles['timer__container-actions'] }>
                 <button className={ styles.timer__button } onClick={pomo.setTimeInFocus} >focus</button>
                 <button className={ styles.timer__button } onClick={pomo.setTimeInBreak} >break</button>
-                <button className={ styles.timer__button } onClick={pomo.setTimeInLongBreak} >long break</button>
+                <button className={ styles.timer__button } onClick={pomo.setTimeInLongBreak} >long</button>
             </div>
             <div className={ styles.timer__view }>{minuteTimerBySeconds(pomo.counter)}</div>
             <div className={ styles['timer__container-actions'] }>

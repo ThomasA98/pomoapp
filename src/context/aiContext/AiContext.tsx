@@ -7,6 +7,8 @@ export interface AiExhibitor extends AiState {
     getResponseWithInputUser: () => string
     changeToken: (token: string) => void
     changeAPI: (api: string) => void
+    sendToLLM: (userInput: string) => Promise<void>
+    aiClear: () => void
 }
 
 export const AiContext = createContext<AiExhibitor>({} as AiExhibitor)

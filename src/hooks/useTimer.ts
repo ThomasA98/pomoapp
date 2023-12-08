@@ -7,9 +7,9 @@ export interface UseTimerProps {
 
 export const useTimer = () => {
 
-    const [ counter, setCounter ] = useState<number>(0)
-    const [ intervalId, setIntervalId ] = useState<number | null>(null)
-    const [ isStarted, setIsStarted ] = useState<boolean>(false)
+    const [counter, setCounter] = useState<number>(0)
+    const [intervalId, setIntervalId] = useState<number | null>(null)
+    const [isStarted, setIsStarted] = useState<boolean>(false)
 
     const start = () => {
         if (isStarted) return

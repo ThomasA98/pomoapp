@@ -19,4 +19,5 @@
     grid-area: markdown;
     padding: var(--space-s);
     color: var(--text-primary-color);
+    overflow-y: scroll;
 }

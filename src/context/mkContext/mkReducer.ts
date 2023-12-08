@@ -4,7 +4,7 @@ export interface MkState {
 
 export type MkAction
     = {
-        type: '[mk] undate text' | '[mk] undate text from localstorage',
+        type: '[mk] update text' | '[mk] update text from localstorage',
         payload: MkState
     }
     | {
@@ -14,8 +14,12 @@ export type MkAction
 export const mkReducer = (state: MkState, action: MkAction): MkState => {
 
     switch (action.type) {
-        case '[mk] undate text':
-        case '[mk] undate text from localstorage':
+        case '[mk] update text':
+            return {
+                ...state,
+                text: action.payload.text
+            }
+        case '[mk] update text from localstorage':
             return {
                 ...state,
                 text: action.payload.text
