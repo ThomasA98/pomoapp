@@ -3,10 +3,11 @@ import { createRoot } from 'react-dom/client'
 
 import App from './App.tsx'
 
-import { ViewProvider, AiProvider, MkProvider, PomoProvider } from './context'
-
-import './css/normalize.css'
 import './index.css'
+import { PomoProvider } from './modules/pomo'
+import { AiProvider } from './modules/ai'
+import { MkProvider } from './modules/markdown'
+import { ViewProvider } from './modules/ui'
 
 createRoot(document.getElementById('root')!)
 .render(

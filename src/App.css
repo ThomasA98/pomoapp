@@ -1,28 +1,3 @@
-body {
-    background-color: var(--bg-color);
-    margin: 0;
-}
-
-.grid-layout {
-    display: grid;
-    grid-template:
-    'header'
-    'main'
-    'footer';
-    grid-template-rows: 15vh 1fr 5vh;
-    height: 100dvh;
-    box-sizing: border-box;
-}
-
-.main {
-    grid-area: main;
-    display: flex;
-    width: 100vw;
-    border-radius: 10px;
-    overflow: hidden;
-    box-sizing: border-box;
-}
-
 .accordion {
     transition: .5s;
     width: max-content;
@@ -34,16 +9,4 @@ body {
     width: calc(100vw - 5rem);
     height: 100%;
     box-sizing: border-box;
-}
-
-.footer {
-    grid-area: footer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    box-sizing: border-box;
-    font-size: var(--text-s);
-    color: var(--secoundary-color);
-    text-shadow: 0 0 .5rem currentColor;
 }

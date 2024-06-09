@@ -1,0 +1,39 @@
+.mksettings {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: var(--text-primary-color);
+}
+
+.mksettings__setting_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: var(--text-sx);
+}
+
+.mksettings__button {
+    border: none;
+    width: 7rem;
+    text-align: center;
+    text-transform: uppercase;
+    padding: var(--space-sx);
+    font-size: var(--text-sx);
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: var(--text-primary-color);
+    background-color: #0000;
+    cursor: pointer;
+    border: 1px solid var(--dark-color);
+    box-shadow: 0 0 .5rem var(--dark-color);
+}
+
+.mksettings__button:hover {
+    background-color: var(--dark-color);
+    transition: .5s;
+}
+
+.mksettings__span {
+    margin-right: var(--space-sx);
+    color: var(--secondary-color);
+}
