@@ -2,7 +2,6 @@ import { useContext } from "react"
 import { MkContext } from "../../../markdown"
 import { AiContext } from "../../aiContext"
 import { useInput } from "../../../../hooks"
-import styles from './AiInput.module.css'
 
 export const AiInput = () => {
 
@@ -32,20 +31,20 @@ export const AiInput = () => {
     }
 
     return (
-        <form onSubmit={e => handlerSubmit(e, onSubmit)} className={styles.aiview__form_container}>
+        <form onSubmit={e => handlerSubmit(e, onSubmit)} className="">
             <input
-                className={styles.aiview__form_input}
+                className=""
                 type='text'
                 placeholder='Question me!!'
                 disabled={inputDisable}
                 onChange={onChangeInput}
                 value={input}
             />
-            <div className={styles.aiview__options_container}>
-                <button type='submit' className={styles.aiview__options}>submit</button>
-                <button type='button' onClick={sendToMarkdown} className={styles.aiview__options} >send MK</button>
-                <button type='button' onClick={sendToMarkdownWithInputUser} className={styles.aiview__options} >send MK</button>
-                <button type='reset' onClick={clear} className={styles.aiview__options}>clear</button>
+            <div className="">
+                <button type='submit' className="">submit</button>
+                <button type='button' onClick={sendToMarkdown} className="" >send MK</button>
+                <button type='button' onClick={sendToMarkdownWithInputUser} className="" >send MK</button>
+                <button type='reset' onClick={clear} className="">clear</button>
             </div>
         </form>
     )
