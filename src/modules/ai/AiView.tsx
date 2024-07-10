@@ -2,18 +2,18 @@ import { useContext } from 'react'
 
 import { AiContext } from './aiContext'
 import { AiInput } from './components/AiInput/AiInput'
+import { ViewContext } from '../ui'
 
 export const AiView = () => {
 
-    const ai = useContext(AiContext)
+    const { textAi } = useContext(AiContext)
+    const { currentView } = useContext(ViewContext)
 
     return (
-        <section>
-            <div className="">
-                <div className="">
-                    <div className="">
-                        {ai.textAi}
-                    </div>
+        <section className="p-4" hidden={ currentView !== 'iaView' }>
+            <div className="flex gap-2 flex-col bg-red-500 rounded p-2">
+                <div className='min-h-96 border rounded border-red-950'>
+                    {textAi}
                 </div>
                 <AiInput />
             </div>

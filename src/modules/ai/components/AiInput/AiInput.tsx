@@ -31,20 +31,20 @@ export const AiInput = () => {
     }
 
     return (
-        <form onSubmit={e => handlerSubmit(e, onSubmit)} className="">
+        <form onSubmit={e => handlerSubmit(e, onSubmit)} className="flex flex-col gap-2">
             <input
-                className=""
+                className="bg-black text-white rounded p-2 w-full font-bold"
                 type='text'
                 placeholder='Question me!!'
                 disabled={inputDisable}
                 onChange={onChangeInput}
                 value={input}
             />
-            <div className="">
-                <button type='submit' className="">submit</button>
-                <button type='button' onClick={sendToMarkdown} className="" >send MK</button>
-                <button type='button' onClick={sendToMarkdownWithInputUser} className="" >send MK</button>
-                <button type='reset' onClick={clear} className="">clear</button>
+            <div className="flex gap-2 justify-between">
+                <button type='submit' className="bg-red-400 shadow shadow-slate-800 p-2 rounded text-center capitalize flex-1">submit</button>
+                <button type='button' onClick={sendToMarkdown} className="bg-red-400 shadow shadow-slate-800 p-2 rounded text-center capitalize flex-1" >send MK</button>
+                <button type='button' onClick={sendToMarkdownWithInputUser} className="bg-red-400 shadow shadow-slate-800 p-2 rounded text-center capitalize flex-1" >send MK</button>
+                <button type='reset' onClick={clear} className="bg-red-400 shadow shadow-slate-800 p-2 rounded text-center capitalize flex-1">clear</button>
             </div>
         </form>
     )

@@ -7,6 +7,14 @@ export type MkPreviewProps = {
 
 export const MkPreview: React.FC<MkPreviewProps> = ({ markdown }) => {
 	return (
-		<Markdown remarkPlugins={[remarkGfm]}>{markdown}</Markdown>
+		<div
+			className="w-full min-h-96 bg-black text-white rounded p-2"
+		>
+			<Markdown
+				remarkPlugins={[remarkGfm]}
+			>
+				{markdown}
+			</Markdown>
+		</div>
 	)
 }

@@ -7,14 +7,9 @@ export type MkSettingsProps = {
 
 export const MkSettings: React.FC<MkSettingsProps> = ({ onToggle, mode }) => {
 	return (
-		<div className="">
-			<div className="">
-				<button className="" >Save</button>
-			</div>
-			<div className="">
-				<span className="">mode: </span>
-				<button className="" onClick={ onToggle }>{mode}</button>
-			</div>
+		<div className="flex justify-between gap-2">
+			<button className="bg-red-400 shadow shadow-slate-800 p-2 rounded text-center capitalize flex-1" >Save</button>
+			<button className="bg-red-400 shadow shadow-slate-800 p-2 rounded text-center capitalize flex-1" onClick={ onToggle }>Mode: {mode}</button>
 		</div>
 	)
 }

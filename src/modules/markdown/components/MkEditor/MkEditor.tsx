@@ -5,8 +5,13 @@ export interface MkEditorProps {
 
 export const MkEditor: React.FC<MkEditorProps>  = ({ handler, text }) => {
 	return (
-		<form className="">
-            <textarea className="" onChange={ handler } value={ text } placeholder='Markdown mode' />
-        </form>
+		<form>
+			<textarea
+				className="w-full min-h-96 bg-black text-white rounded p-2"
+				onChange={ handler }
+				value={ text }
+				placeholder='Markdown mode'
+			/>
+		</form>
 	)
 }
